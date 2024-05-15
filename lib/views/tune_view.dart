@@ -5,7 +5,15 @@ import 'package:music_notes_player_app_setup/widgets/tune_item.dart';
 
 class TuneView extends StatelessWidget {
   const TuneView({super.key});
-
+  final List<Color> tuneColors = const [
+    Color(0xffF44336),
+    Color(0XffF89800),
+    Color(0xffFEEB3B),
+    Color(0xff4CAF50),
+    Color(0xff2F9688),
+    Color(0xff2896F3),
+    Color(0xff9C27B0)
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,30 +24,20 @@ class TuneView extends StatelessWidget {
         backgroundColor: Color(0xff253238),
       ),
       body: Column(
-        children: [
-          TuneItem(
-            color: Color(0xffFE403C),
-          ),
-          TuneItem(
-            color: Colors.green,
-          ),
-          TuneItem(
-            color: Colors.pink,
-          ),
-          TuneItem(
-            color: Colors.purple,
-          ),
-          TuneItem(
-            color: Colors.blue,
-          ),
-          TuneItem(
-            color: Colors.black87,
-          ),
-          TuneItem(
-            color: Colors.purpleAccent,
-          ),
-        ],
+        children: tuneColors
+            .map(
+              (e) => TuneItem(color: e),
+            )
+            .toList(),
       ),
     );
   }
+
+  // List<TuneItem> getTuneItems() {
+  //   List<TuneItem> items = [];
+  //   for (var color in tuneColors) {
+  //     items.add(TuneItem(color: color));
+  //   }
+  //   return items;
+  // }
 }
