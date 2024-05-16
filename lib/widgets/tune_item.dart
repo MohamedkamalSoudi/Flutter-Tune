@@ -7,7 +7,7 @@ class TuneItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        height: 100,
+        height: 80,
         color: color,
       ),
     );
